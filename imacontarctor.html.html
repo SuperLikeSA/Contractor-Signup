@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up as a Contractor | SuperLike - Cape Town & Johannesburg</title>
+    <meta name="description" content="Sign up as a contractor with SuperLike and join our team of skilled professionals in Cape Town and Johannesburg. We are looking for experts in construction, renovations, plumbing, painting, roofing, electrical, and carpentry.">
+    <meta name="keywords" content="contractor sign up, construction jobs, renovation jobs, plumbing jobs, painting jobs, roofing jobs, electrical jobs, carpentry jobs, Cape Town contractors, Johannesburg contractors, SuperLike contractors">
+    <meta property="og:title" content="Sign Up as a Contractor | SuperLike - Cape Town & Johannesburg">
+    <meta property="og:description" content="Join SuperLike as a contractor and advance your career. We're hiring experts in construction, renovations, plumbing, painting, roofing, electrical, and carpentry in Cape Town and Johannesburg.">
+    <meta property="og:url" content="https://www.yourwebsite.com/imacontractor.html">
+    <meta property="og:image" content="https://www.yourwebsite.com/_images/contractor-banner.jpg">
+    <link rel="stylesheet" href="imacontractor-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional CSS for the thank you message */
+        #thank-you-message {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>SuperLike</h1>
+            <button class="menu-button" onclick="toggleMenu()">☰</button>
+            <nav id="main-nav">
+                <a href="home.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="imacontarctor.html.html">I'm A Contractor</a>
+                <a href="bookaservice.html">Book A Service</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="sign-up">
+            <div class="container">
+                <h2>Sign Up as a Contractor</h2>
+                <p>Join our team of skilled professionals and take your career to the next level. We are looking for contractors in Cape Town and Johannesburg for various services including construction, renovations, plumbing, painting, roofing, electrical work, and carpentry. We will be in contact with you as soon as possible!</p>
+                <!-- This is the form that sends data to Google Forms -->
+                <form id="contractor-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdOfJD7VYSzhOe0D8gKsdyi_oFYhXBCm4A5rN0EROfMX0mclQ/formResponse" method="POST" target="hidden_iframe">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="entry.528675818" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="entry.1340780243" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="entry.1462210860" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Experience:</label>
+                        <textarea id="experience" name="entry.749130781" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialty">Specialty:</label>
+                        <select id="specialty" name="entry.437199399">
+                            <option value="Construction">Construction</option>
+                            <option value="Renovations">Renovations</option>
+                            <option value="Plumbing">Plumbing</option>
+                            <option value="Painting">Painting</option>
+                            <option value="Roofing">Roofing</option>
+                            <option value="Electrical">Electrical</option>
+                            <option value="Carpentry">Carpentry</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="cta-button">Submit</button>
+                </form>
+                <!-- Hidden iframe to handle form submission without redirecting -->
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+                <!-- Thank you message -->
+                <div id="thank-you-message">Thank you! Submission successful</div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SuperLike. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('contractor-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Show the thank you message
+            const thankYouMessage = document.getElementById('thank-you-message');
+            thankYouMessage.style.display = 'block';
+            
+            // Hide the message after 3 seconds
+            setTimeout(() => {
+                thankYouMessage.style.display = 'none';
+                // Redirect back to the imacontractor.html page after hiding the message
+                window.location.href = 'imacontarctor.html.html';
+            }, 3000);
+            
+            // Optionally, you can submit the form to Google Forms using a hidden iframe
+            document.getElementById('contractor-form').submit();
+        });
+    </script>
+</body>
+</html>
